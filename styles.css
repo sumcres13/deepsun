@@ -711,6 +711,60 @@ html:lang(en) .representative-note .ceo-catch{font-family:var(--company-font);fo
 .values-section{border-block:1px solid #d8952526;padding-block:clamp(64px,7vw,100px)}
 .values-section::before,.values-section::after{content:none}
 .values-section .value-card{background:#fffaf1f2;border-color:#d8952540;box-shadow:0 8px 20px #681c1608}
+
+.water-feature {
+  display: grid;
+  grid-template-columns: minmax(128px, 164px) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(18px, 3vw, 34px);
+  max-width: 700px;
+  margin: 24px auto 0;
+  padding: 13px clamp(14px, 2.8vw, 27px) 13px 13px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  text-align: left;
+}
+
+.water-feature-photo {
+  position: relative;
+  aspect-ratio: 800 / 711;
+  overflow: hidden;
+  background: var(--cream);
+}
+
+.water-feature-photo img {
+  /* Frame the machine and glass within the supplied product image. */
+  position: absolute;
+  width: 175.25%;
+  max-width: none;
+  height: auto;
+  left: -33.5%;
+  top: -38.4%;
+}
+
+.water-feature-copy h3 {
+  margin: 0 0 6px;
+  color: var(--ink);
+  font: 600 clamp(18px, 2.2vw, 23px)/1.45 var(--serif);
+}
+
+.water-feature-copy p {
+  margin: 0;
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+@media (max-width: 760px) {
+  .water-feature {
+    grid-template-columns: clamp(82px, 24vw, 114px) minmax(0, 1fr);
+    gap: 12px;
+    margin-top: 16px;
+    padding: 10px;
+  }
+
+  .water-feature-copy p { font-size: 13px; }
+}
 .booking-grid{grid-template-columns:repeat(3,minmax(0,1fr));max-width:950px}
 .booking-card.tabelog .booking-action{background:#d58a12;color:#2e1a09}
 @media(max-width:900px) and (min-width:761px){
