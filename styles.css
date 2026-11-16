@@ -713,47 +713,36 @@ html:lang(en) .representative-note .ceo-catch{font-family:var(--company-font);fo
 .values-section .value-card{background:#fffaf1f2;border-color:#d8952540;box-shadow:0 8px 20px #681c1608}
 
 .water-feature {
-  padding-block: clamp(48px, 6vw, 88px);
-  background: #eaf1e5;
-  border-bottom: 1px solid #d4e2cf;
+  color: var(--paper);
+  background: linear-gradient(135deg, #245a6a, #153e51 55%, #102e40);
 }
 
 .water-feature-grid {
   display: grid;
   grid-template-areas: "photo copy";
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-columns: min(54%, 900px) minmax(0, 1fr);
   align-items: center;
-  gap: clamp(30px, 6vw, 86px);
-  max-width: 1120px;
 }
 
-.water-feature-photo {
-  grid-area: photo;
-  position: relative;
-  aspect-ratio: 800 / 711;
-  overflow: hidden;
-  background: var(--paper);
-  border: 1px solid #c7d7c0;
-}
+.water-feature-photo { grid-area: photo; }
 
 .water-feature-photo img {
-  /* Frame the machine and glass within the supplied product image. */
-  position: absolute;
-  width: 175.25%;
-  max-width: none;
+  display: block;
+  width: 100%;
   height: auto;
-  left: -33.5%;
-  top: -38.4%;
 }
 
 .water-feature-copy {
   grid-area: copy;
+  max-width: 680px;
+  padding: clamp(26px, 3.7vw, 70px) clamp(28px, 4.5vw, 80px);
   text-align: left;
 }
 
 .water-feature-copy .section-title {
   margin: 0 0 18px;
-  font-size: clamp(30px, 4.2vw, 58px);
+  color: inherit;
+  font-size: clamp(30px, 3.9vw, 58px);
   line-height: 1.22;
   letter-spacing: .01em;
 }
@@ -761,19 +750,34 @@ html:lang(en) .representative-note .ceo-catch{font-family:var(--company-font);fo
 .water-feature-copy p {
   max-width: 43ch;
   margin: 0;
-  color: var(--text);
-  font-size: clamp(15px, 1.45vw, 18px);
-  line-height: 1.85;
+  font-size: clamp(15px, 1.3vw, 18px);
+  line-height: 1.75;
 }
 
 .water-feature-copy p + p { margin-top: 12px; }
 
-@media (max-width: 760px) {
+.water-feature-points {
+  margin: 16px 0 0;
+  padding-inline-start: 1.2em;
+  font-size: clamp(14px, 1.15vw, 16px);
+  line-height: 1.65;
+}
+
+.water-feature-points li::marker { color: #a8d8df; }
+
+@media (1000px < width <= 1180px) {
+  .water-feature-copy { padding: 22px 26px; }
+}
+
+@media (max-width: 1000px) {
   .water-feature-grid {
-    grid-template-areas: "copy" "photo";
+    grid-template-areas: "photo" "copy";
     grid-template-columns: minmax(0, 1fr);
-    gap: 24px;
-    max-width: 470px;
+  }
+
+  .water-feature-copy {
+    max-width: 610px;
+    padding: clamp(28px, 6vw, 56px) clamp(21px, 6vw, 56px);
   }
 
   .water-feature-copy .section-title { margin-bottom: 14px; }
