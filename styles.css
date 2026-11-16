@@ -721,12 +721,14 @@ html:lang(en) .representative-note .ceo-catch{font-family:var(--company-font);fo
   display: grid;
   grid-template-areas: "photo copy";
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  align-items: center;
+  align-items: stretch;
   gap: clamp(24px, 4.25vw, 62px);
 }
 
 .water-feature-photo {
   grid-area: photo;
+  display: grid;
+  place-items: center;
   padding: clamp(6px, .75vw, 11px);
   background: var(--paper);
   border: 1px solid #c79746;
@@ -741,9 +743,12 @@ html:lang(en) .representative-note .ceo-catch{font-family:var(--company-font);fo
 
 .water-feature-copy {
   grid-area: copy;
-  max-width: 490px;
-  padding: clamp(16px, 2.2vw, 28px);
-  background: #fffaf0f2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(22px, 3vw, 44px);
+  background: var(--paper);
+  border: 1px solid var(--line);
   text-align: left;
 }
 
@@ -794,30 +799,15 @@ html:lang(en) .representative-note .ceo-catch{font-family:var(--company-font);fo
 .water-feature-points li::marker { color: var(--vermilion); }
 .water-feature-points strong { display: block; color: var(--ink); }
 
-.water-hydration-sources {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px 16px;
-  margin: 21px 0 0;
-  padding-top: 12px;
-  border-top: 1px solid var(--line);
-  font-size: 12px;
-}
-
-.water-hydration-sources a {
-  color: var(--ink);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
-@media (max-width: 760px) {
+@media (max-width: 960px) {
   .water-feature-grid {
     grid-template-areas: "copy" "photo";
     grid-template-columns: minmax(0, 1fr);
     gap: 14px;
   }
+}
 
-  .water-feature-copy { max-width: none; }
+@media (max-width: 760px) {
   .water-feature-points { grid-template-columns: minmax(0, 1fr); }
 }
 .booking-grid{grid-template-columns:repeat(3,minmax(0,1fr));max-width:950px}
@@ -981,12 +971,7 @@ html:lang(en) .representative-note .ceo-catch{font-style:italic;font-weight:500;
 }
 
 .values-section {
-  --values-artwork: url("assets/deepsun-artwork-wide.png");
-  --values-artwork-height: clamp(620px, 58vw, 960px);
-  background:
-    linear-gradient(transparent 70%, var(--cream)) top / 100% var(--values-artwork-height) no-repeat,
-    var(--values-artwork) top / 100% var(--values-artwork-height) no-repeat,
-    var(--cream);
+  background: var(--cream) url("assets/deepsun-values-artwork-desktop.png") center / 100% 100% no-repeat;
 }
 @media (max-width: 760px) {
   .home-store-card-header > .store-wordmark { width: 52px; height: 52px; }
@@ -995,10 +980,7 @@ html:lang(en) .representative-note .ceo-catch{font-style:italic;font-weight:500;
   .booking-grid { grid-template-columns: 1fr; max-width: 420px; }
   .home-store,
   .stores-gallery { background-image: url("assets/deepsun-artwork-tall.png"); }
-  .values-section {
-    --values-artwork: url("assets/deepsun-artwork-tall.png");
-    --values-artwork-height: clamp(1030px, 250vw, 1450px);
-  }
+  .values-section { background-image: url("assets/deepsun-values-artwork-mobile.png"); }
 }
 
 /* Company identity and the site-wide colors drawn from the DEEPSUN mark. */
